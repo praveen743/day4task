@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        obj()
+        async function obj() {
+            try {
+                var data = await fetch("https://restcountries.com/v3.1/all");
+                var jdata = await data.json();
+                for (i = 0; i <= 50; i++) {
+                    console.log("country :"+ i);
+                    console.log(jdata[i].flags.png);
+                    console.log(jdata[i].name.common);
+                    console.log(jdata[i].region);
+                    console.log(jdata[i].subregion);
+                    console.log(jdata[i].population);
+
+
+                }
+                
+            } catch (error) {
+                console.log(error);
+            }
+        }
+
+    </script>
+</body>
+
+</html>
